@@ -37,7 +37,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     
 
 
-            } catch (Exception e) {
+            } 
+        }catch (Exception e) {
                 // TODO: handle exception
             }
         }
