@@ -10,6 +10,7 @@ public class UserDetailsResponse {
     private UUID userUUID;
     private String displayName;
     private String profilePic;
+    private String accessToken;
 }
 
 

@@ -28,7 +28,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String authHeader = request.getHeader("Authorization");
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String accessToken = authHeader.substring(7);
-            // Validate the token (using your own logic or a JWT library)
+            // Validate the token 
             try {
                 Claims claims = jwtUtil.extractClaims(accessToken);
                 String userUUID = claims.get("userUUID", String.class);

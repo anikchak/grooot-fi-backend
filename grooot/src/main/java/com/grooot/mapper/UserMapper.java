@@ -20,6 +20,7 @@ public interface UserMapper {
     @Mapping(target = "userUUID", source = "userUUID")
     @Mapping(target = "displayName", source = "displayName")
     @Mapping(target = "profilePic", source = "profilePic")
+    @Mapping(target = "accessToken", source = "accessToken")
     UserDetailsResponse toResponse(UserDetails userDetails);
 }
 

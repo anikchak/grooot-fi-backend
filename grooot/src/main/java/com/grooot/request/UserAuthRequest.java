@@ -4,6 +4,5 @@ import lombok.Data;
 
 @Data
 public class UserAuthRequest {
-  private String ssoAccessToken;
-  private String ssoSource;  
+  private String ssoProvider;  
 }

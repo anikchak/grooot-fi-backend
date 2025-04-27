@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.grooot.request.UserAuthRequest;
 import com.grooot.response.BaseResponse;
@@ -19,9 +20,10 @@ public class UserAuthController {
     @Autowired
     UserAuthService userAuthService;
     
-    @PostMapping("/api/v1/auth")
-    public ResponseEntity<BaseResponse> loginOrSignup(@RequestBody UserAuthRequest request) {
-        BaseResponse userDetails = userAuthService.loginOrSignup(request);
+    @PostMapping("/api/v1/auth/login")
+    public ResponseEntity<BaseResponse> loginOrSignup(@RequestBody UserAuthRequest request,
+            @RequestHeader(value = "Authorization", required = false) String authHeader) {
+        BaseResponse userDetails = userAuthService.loginOrSignup(request,authHeader);
         return ResponseEntity.status(userDetails.getCode()).body(userDetails);
     }
 }
